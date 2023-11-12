@@ -1,3 +1,5 @@
+package timecomplexities;
+
 // Linear code Sample using java
 // O(n)
 
