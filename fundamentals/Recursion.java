@@ -12,21 +12,21 @@ public class Recursion {
         int counter = 0;
 
         // Starting from 0
-        Recursion.recursionFundamentals(counter);
+        System.out.println(Recursion.recursionFundamentals(counter));
         System.out.println("\n------------------------------\n");
 
         // Starting from 1
-        Recursion.recursionFundamentals(++counter);
+        System.out.println(Recursion.recursionFundamentals(++counter));
     }
 
-    private static void recursionFundamentals(int counter){
+    private static int recursionFundamentals(int counter){
 
         // Base Case
         // O(1);
 
-        if (counter <= 10) {
+        if (counter < 10) {
             System.out.println(counter);
-            Recursion.recursionFundamentals(counter + 1);
-        }
+            return Recursion.recursionFundamentals(counter + 1);
+        } return counter;
     }
 }
