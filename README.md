@@ -1,4 +1,4 @@
-# Time Complexity Studies
+# Data Structure and Algorithms Studies
 
 ## Overview
 Welcome to the Data Structures and Algorithms repository! This comprehensive collection covers key aspects of the "Data Structures and Algorithms" subject, a pivotal third-semester course in my academic journey. The content is a culmination of both academic studies at the Federal University of Campina Grande (UFCG) and dedicated self-study efforts.
