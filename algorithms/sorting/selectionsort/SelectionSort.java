@@ -9,10 +9,12 @@ public class SelectionSort {
     private static int[] nums = PiecesOfCodeIMayNeed.nums;
 
     public static void main(String[] args) {
-        System.out.println("The list is " + Arrays.toString(nums) + "\n");
+        PiecesOfCodeIMayNeed.welcomeMessage();
+
         forImplementationSelectionSort(nums);
         whileImplementationSelectionSort(nums);
-        System.out.println("Notice that it didn't change the original list (because I did not want to):\n" + Arrays.toString(nums) + "\n");
+        
+        PiecesOfCodeIMayNeed.goodbyeMessage();
     }
 
     private static void forImplementationSelectionSort(int[] nums){

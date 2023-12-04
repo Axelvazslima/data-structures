@@ -5,14 +5,14 @@ import java.util.Arrays;
 import algorithms.PiecesOfCodeIMayNeed;
 
 public class InsertionSort {
-    private static int[] numsOG = PiecesOfCodeIMayNeed.nums, nums = PiecesOfCodeIMayNeed.nums.clone();
+    private static int[] nums = PiecesOfCodeIMayNeed.nums.clone();
 
     public static void main(String[] args) {
-        System.out.println("The original list is: " + Arrays.toString(numsOG) + "\n");
+        PiecesOfCodeIMayNeed.welcomeMessage();
 
         forLoopImplementationInsertionSort(nums);
 
-        System.out.println("\nNotice that it didn't change the original list (because I did not want to):\n" + Arrays.toString(numsOG) + "\n");
+        PiecesOfCodeIMayNeed.goodbyeMessage();
     }
 
     private static void forLoopImplementationInsertionSort(int[] nums){
