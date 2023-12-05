@@ -21,12 +21,7 @@ Delve into a variety of algorithms, each accompanied by code examples. Understan
 Apply your knowledge to real-world problems with this section, offering solutions to common algorithmic challenges. The solutions are accompanied by detailed explanations to enhance your problem-solving skills.
 
 ## Theoretical Studies
-For a more in-depth understanding of time complexity and related concepts, consider exploring the accompanying [theoretical studies site](https://axelvaz.notion.site/Data-Structure-and-Algorithms-8122b0223a6440aba987dfa2b530ffec?pvs=4). This resource provides additional explanations, examples, and supplementary materials to enhance your comprehension of the subject matter.
+My [theoretical studies site](https://axelvaz.notion.site/Data-Structure-and-Algorithms-8122b0223a6440aba987dfa2b530ffec?pvs=4).
 
 ### How to Use
 Each file in this repository includes comments to facilitate understanding. Read through the comments alongside the code to grasp the intricacies of the algorithms and their time complexities.
-
-### Contribution
-Feel free to contribute by suggesting improvements, reporting issues, or adding new algorithms. Contributions from the community can enrich the learning experience for everyone.
-
-##### Thank you for being a part of this learning journey! Happy coding!
