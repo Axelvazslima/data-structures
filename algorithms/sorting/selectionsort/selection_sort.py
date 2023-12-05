@@ -1,6 +1,8 @@
 # Selection Sort algorithm in Python
 
-nums = [10, 9, 8, 3, 6, 2, 100, 67, 43, 98]
+import random as rd
+
+nums = [rd.randint(0, 100) for i in range(10)]
 
 
 def forLoopSelSort(nums):
