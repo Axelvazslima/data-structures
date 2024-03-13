@@ -1,4 +1,4 @@
-package algorithms.binarysearch;
+package binarysearch;
 
 // Different ways of implementing the binary search algorithm.
 // O(log n).
