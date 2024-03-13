@@ -4,6 +4,7 @@ package problems.duplicateElements;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -29,11 +30,11 @@ class DuplicateElements {
     }
 
     private static boolean verifyDuplicatesMap(String[] nums){
-        Map<String, String> a = new HashMap<>();
+        Map<String, Boolean> a = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
             if (a.get(nums[i]) == null) {
-                a.put(nums[i], nums[i]);
+                a.put(nums[i], true);
             } else {
                 return true;
             }
@@ -59,6 +60,16 @@ class DuplicateElements {
                     return true;
                 }
             }
+        }
+        return false;
+    }
+
+    private static boolean verifyDuplicatesLinearFor(int[] nums){
+        int biggest = Arrays.stream(nums).max().getAsInt();
+        boolean[] frequencyArr = new boolean[biggest + 1];
+        for (int i = 0; i < nums.length; i++) {
+            if(frequencyArr[nums[i]]) return true;
+            frequencyArr[nums[i]] = true;
         }
         return false;
     }
