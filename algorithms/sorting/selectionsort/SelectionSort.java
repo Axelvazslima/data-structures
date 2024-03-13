@@ -1,7 +1,4 @@
-package algorithms.sorting.selectionsort;
-
 import java.util.Arrays;
-import algorithms.PiecesOfCodeIMayNeed;
 
 // N² time complexity
 // Selects the lowest element (minimum) and insert it into the first spot
@@ -9,12 +6,12 @@ public class SelectionSort {
     private static int[] nums = PiecesOfCodeIMayNeed.nums;
 
     public static void main(String[] args) {
-        PiecesOfCodeIMayNeed.welcomeMessage();
+        int[] seq = new int[]{4, 3, 2, 5, 6, 7, 8, 100, 1000, 0, -2, 3, 22, -4, 9, 10};
+        System.out.println("The original Array is: " + Arrays.toString(seq));
+        forImplementationSelectionSort(seq);
 
-        forImplementationSelectionSort(nums);
-        whileImplementationSelectionSort(nums);
-        
-        PiecesOfCodeIMayNeed.goodbyeMessage();
+        whileLoopImplementationSelectionSort(seq);
+        System.out.println("The original Array still is: " + Arrays.toString(seq));
     }
 
     private static void forImplementationSelectionSort(int[] nums){
@@ -26,12 +23,14 @@ public class SelectionSort {
                     minIndex = j;
                 }
             }
-            PiecesOfCodeIMayNeed.swap(temp, i, minIndex);
+            int aux = temp[i];
+            temp[i] = temp[minIndex];
+            temp[minIndex] = aux;
         }
         System.out.println("The For Loop implemenation:\n" + Arrays.toString(temp) + "\n");
     }
 
-    private static void whileImplementationSelectionSort(int[] nums){
+    private static void whileLoopImplementationSelectionSort(int[] nums){
         int[] temp = nums.clone();
 
         int i = 0;
@@ -44,7 +43,9 @@ public class SelectionSort {
                 }
                 j++;
             }
-            PiecesOfCodeIMayNeed.swap(temp, i, minIndex);
+            int aux = temp[i];
+            temp[i] = temp[minIndex];
+            temp[minIndex] = aux;
             i++;
         }
         System.out.println("\nThe While Loop implementation:\n" + Arrays.toString(temp) + "\n");
