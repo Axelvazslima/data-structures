@@ -3,9 +3,9 @@ import java.lang.StringBuilder;
 public class Queue{
     private int[] queue;
     private int size, head, tail;
-    private int final DEFAULT_CAPACITY = 20;
-    private double final DOUBLE_CAPACITY = 2.0;
-    private double final HALF_CAPACITY = 0.5;
+    private final int DEFAULT_CAPACITY = 20;
+    private final double DOUBLE_CAPACITY = 2.0;
+    private final double HALF_CAPACITY = 0.5;
 
     public Queue(){
         this.queue = new int[20];
@@ -22,59 +22,71 @@ public class Queue{
         return this.size == 0;
     }
 
-    public void addLast(int value){
-        if (this.size == this.queue.length) {
-            this.populateQueue(this.DOUBLE_CAPACITY);
-        }
-        this.queue[this.tail++] = value;
+    public boolean isFull(){
+        return this.size == this.queue.length;
     }
 
-    public int removeFirst(){
-        int element = this.head++;
+    public void addLast(int value){
+        if (this.isFull()) {
+            this.newQueueSize(this.DOUBLE_CAPACITY);
+        }
+        this.size++;
 
+        if (this.head == -1) this.head++;
+
+        this.queue[++this.tail] = value;
+    }
+
+    // Method that removes the first element from the queue by increasing its head and shifting it left.
+    // Returns the removed element.
+    public int removeFirst(){
+        int element = this.head;
+        this.head++;
+        this.size--;
+
+        // Check if it's worth it to decrease the array length.
         if ((this.size <= this.queue.length / 4) && (this.size > this.DEFAULT_CAPACITY * 2)) {
             this.fixQueue(this.HALF_CAPACITY);
         } else {
             this.shiftLeft();
         }
 
+        if(this.isEmpty()){
+            this.head = -1;
+            this.tail = -1;
+        }
+
         return element;
     }
 
-    private int fixQueue(double newSize){
+    private void fixQueue(double newSizeFactor){
         this.shiftLeft();
-        this.populateQueue(newSize);
+        this.newQueueSize(newSizeFactor);
     }
 
     private void shiftLeft(){
         int j = this.head;
-        for (int i = 0; i <= this.queue.size; i++) {
-            this.swap(this.queue, i, j);
+        for (int i = 0; i <= this.size; i++) {
+            this.queue[i] = this.queue[j];
             j++;
         }
     }
 
-    private int[] populateQueue(double newSize){
-            int[] temp = new int[Integer.parseInt(this.size * newSize)];
-            for (int i = this.head; i < this.queue.length; i++) {
-                temp[i] = this.queue[i];
-            }
-            this.size = Integer.parseInt(newSize);
-            return temp;
-    }
+    private void newQueueSize(double newSizeFactor){
+        int[] temp = new int[(int) (this.size * newSizeFactor)];
 
-    private void swap(int[] v, int i, int j){
-        int aux = v[i];
-        v[i] = v[j];
-        v[j] = aux;
+        for (int i = this.head; i < this.queue.length; i++) {
+            temp[i] = this.queue[i];
+        }
+        this.queue = temp;
     }
 
     public String toString(){
         StringBuilder output = new StringBuilder("queue(");
         if (this.isEmpty()) return output.append(" empty )").toString();
-        for (int i = 0; i <= this.size; i++) {
+        for (int i = 0; i < this.size; i++) {
             output.append(this.queue[i]);
-            if (i < this.size) output.append(", ");
+            if (i < this.size - 1) output.append(", ");
         }
         return output.append(")").toString();
     }
