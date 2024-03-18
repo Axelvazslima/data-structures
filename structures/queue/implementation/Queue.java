@@ -40,9 +40,12 @@ public class Queue{
     // Method that removes the first element from the queue by increasing its head and shifting it left.
     // Returns the removed element.
     public int removeFirst(){
+        if (this.isEmpty()) throw new RuntimeException("Already empty.");
+
         int element = this.head;
         this.head++;
         this.size--;
+        this.tail--;
 
         // Check if it's worth it to decrease the array length.
         if ((this.size <= this.queue.length / 4) && (this.size > this.DEFAULT_CAPACITY * 2)) {
