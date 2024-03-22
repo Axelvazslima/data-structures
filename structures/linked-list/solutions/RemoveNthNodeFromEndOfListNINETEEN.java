@@ -1,5 +1,8 @@
 // Remove nth Node from Linked List from end to start - LeetCode 19
 // Beats 100% os users with Java
+
+public class RemoveNthNodeFromEndOfListNINETEEN{}
+
 class ListNode {
     int val;
     ListNode next;
