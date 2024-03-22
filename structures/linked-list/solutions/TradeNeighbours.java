@@ -2,6 +2,8 @@ import java.lang.StringBuilder;
 import java.util.Scanner;
 import java.util.Arrays;
 
+// This code is a problem where given an index I have to trade its value for the next index using a Linked List
+
 class Node{
     int element;
     Node next, prev;
