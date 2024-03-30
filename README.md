@@ -20,6 +20,9 @@ Delve into a variety of algorithms, each accompanied by code examples. Understan
 ### 4. Problem Solutions
 Apply your knowledge to real-world problems with this section, offering solutions to common algorithmic challenges. The solutions are accompanied by detailed explanations to enhance your problem-solving skills.
 
+### 5. Structures
+Data-structures implementations: Linked-list, Array-lists, Stack, Queue...
+
 ## Theoretical Studies
 My [theoretical studies site](https://axelvaz.notion.site/Data-Structure-and-Algorithms-8122b0223a6440aba987dfa2b530ffec?pvs=4).
 
