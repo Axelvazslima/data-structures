@@ -1,3 +1,5 @@
+import java.lang.StringBuilder;
+
 public class BST {
 
     private Node root;
@@ -112,6 +114,20 @@ public class BST {
 
     public int size() {
         return this.size;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        return preProcessing(node, sb).trim();
+    }
+
+    private String preProcessing(Node node, StringBuilder sb){
+        if(node == null) return sb.toString();
+        sb.append(node.value);
+        this.preProcessing(node.left, sb);
+        this.preProcessing(node.right, sb);
+        return sb.toString()
     }
 
 }
